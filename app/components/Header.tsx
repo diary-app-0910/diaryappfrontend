@@ -8,7 +8,7 @@ const Header = () => {
             <nav>
             <Link
                 className="font-medium text-gray-500 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-                href="/"
+                href="/diarylist"
                 >
             日記一覧
             </Link>
