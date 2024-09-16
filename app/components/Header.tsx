@@ -4,7 +4,6 @@ import Link from "next/link";
 const Header = () => {
     return (
         <div>
-            Header nav
             <nav>
             <Link
                 className="font-medium text-gray-500 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"

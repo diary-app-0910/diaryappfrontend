@@ -13,7 +13,17 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-    },
+      colors: {
+        // テキストカラーを追加
+        text: {
+          DEFAULT: '#1E1E1E', // デフォルトのテキストカラー
+        },
+        // 線（ボーダー）のデフォルトカラーを追加
+        border: {
+          DEFAULT: '#1E1E1E', // ここでデフォルトの線の色を設定
+        }
+      }
+    }
   },
   plugins: [],
 };

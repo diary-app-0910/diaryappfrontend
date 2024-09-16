@@ -31,3 +31,9 @@ body {
     text-wrap: balance;
   }
 }
+
+@layer base {
+  body {
+    @apply text-text; /* 追加したデフォルトのテキストカラー #1E1E1E を適用 */
+  }
+}
