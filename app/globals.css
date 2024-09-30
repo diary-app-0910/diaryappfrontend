@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 30, 30, 30; /* テキストカラー　#1E1E1E の RGB 値 */
+  --background-start-rgb: 245, 244, 243; /* F5F4F3のRGB値 */
+  --background-end-rgb: 245, 244, 243;   /* F5F4F3のRGB値 */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,8 +32,3 @@ body {
   }
 }
 
-@layer base {
-  body {
-    @apply text-text; /* 追加したデフォルトのテキストカラー #1E1E1E を適用 */
-  }
-}

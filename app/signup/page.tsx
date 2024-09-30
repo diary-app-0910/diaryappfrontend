@@ -4,6 +4,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import Button from '../components/elements/Button';
 import { signup } from '../api/Api';
+import Link from "next/link";
 
 // フォームデータの型を定義
 interface SignupForm {
@@ -67,6 +68,12 @@ const Page = () => {
 
                     <Button buttonName='アカウント作成' />
                 </form>
+                <Link
+                    className="font-medium text-gray-500 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                    href="/"
+                    >
+                    アカウントをお持ちですか？ログインする
+                </Link>
             </div>
         </main>
     );
