@@ -1,10 +1,12 @@
 "use client"
+// サインアップ
 
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Button from '../components/elements/Button';
 import { signup } from '../api/Api';
 import Link from "next/link";
+import Image from 'next/image';
 
 // フォームデータの型を定義
 interface SignupForm {
@@ -39,41 +41,50 @@ const Page = () => {
     return (
         <main className='absolute inset-0 flex items-center justify-center'>
             <div className='flex flex-col items-center space-y-6'>
-                <h1>Diary App</h1>
-                <h1 className='text-left w-full'>アカウント作成</h1>
-                <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-2'>
-                    <label htmlFor='ユーザー名'>ユーザー名</label>
-                    <input id='name' type='text' {...register('username', { required: '名前は必須です' })} className={inputClass()} />
-                    <p>{errors.username?.message}</p>
+                <div className='flex gap-2'>
+					<Image src='/img/logo-header.svg' alt='ロゴ' width={32} height={32} />
+					<h1 className='font-bold text-2xl lg:text-3xl'>Diary App</h1>
+				</div>
+                <div className='bg-white sm,md:w-[318px] lg:w-[658px] h-[700px] flex flex-col items-center justify-center rounded-md p-6'>
+                    <div className='w-[318px]'>
+                    <h1 className='text-left font-bold w-full mb-4 text-xl mb-8'>アカウント作成</h1>
+                        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-3'>
+                            <label htmlFor='ユーザー名'>ユーザー名</label>
+                            <input id='name' type='text' {...register('username', { required: '名前は必須です' })} className={inputClass()} />
+                            <p>{errors.username?.message}</p>
 
-                    <label htmlFor='メールアドレス'>メールアドレス</label>
-                    <input id='email' type='email' {...register('email', { required: 'メールアドレスは必須です' })} className={inputClass()} />
-                    <p>{errors.email?.message}</p>
+                            <label htmlFor='メールアドレス'>メールアドレス</label>
+                            <input id='email' type='email' {...register('email', { required: 'メールアドレスは必須です' })} className={inputClass()} />
+                            <p>{errors.email?.message}</p>
 
-                    <label htmlFor='パスワード'>パスワード</label>
-                    <input id='password' type='password' {...register('password', { required: 'パスワードは必須です' })} className={inputClass()} />
-                    <p>{errors.password?.message}</p>
+                            <label htmlFor='パスワード'>パスワード</label>
+                            <input id='password' type='password' {...register('password', { required: 'パスワードは必須です' })} className={inputClass()} />
+                            <p>{errors.password?.message}</p>
 
-                    <label htmlFor='パスワード確認用'>パスワード確認用</label>
-                    <input
-                        id='passwordConfirmation'
-                        type='password'
-                        {...register('passwordConfirmation', {
-                            required: '確認用パスワードは必須です',
-                            validate: value => value === password || 'パスワードが一致しません'
-                        })}
-                        className={inputClass()}
-                    />
-                    <p>{errors.passwordConfirmation?.message}</p>
+                            <label htmlFor='パスワード確認用'>パスワード確認用</label>
+                            <input
+                                id='passwordConfirmation'
+                                type='password'
+                                {...register('passwordConfirmation', {
+                                    required: '確認用パスワードは必須です',
+                                    validate: value => value === password || 'パスワードが一致しません'
+                                })}
+                                className={inputClass()}
+                            />
+                            <p>{errors.passwordConfirmation?.message}</p>
 
-                    <Button buttonName='アカウント作成' />
-                </form>
-                <Link
-                    className="font-medium text-gray-500 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-                    href="/"
-                    >
-                    アカウントをお持ちですか？ログインする
-                </Link>
+                            <Button buttonName='アカウント作成' />
+                        </form>
+                        <div className='flex justify-center'>
+                            <Link
+								className='text-center text-gray-500 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50'
+                                href="/"
+                                >
+                                アカウントをお持ちですか？ログインする
+                            </Link>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
     );

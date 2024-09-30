@@ -38,7 +38,7 @@ export default function Home() {
 					<Image src='/img/logo-header.svg' alt='ロゴ' width={32} height={32} />
 					<h1 className='font-bold text-2xl lg:text-3xl'>Diary App</h1>
 				</div>
-				<div className='bg-white sm,md:w-[318px] lg:w-[658px] h-[520px] flex flex-col items-center justify-center p-6'>
+				<div className='bg-white sm,md:w-[318px] lg:w-[658px] h-[520px] flex flex-col items-center justify-center rounded-md p-6'>
 					<div className='w-[318px]'>
 						<h1 className='text-left font-bold w-full mb-4 text-xl mb-8'>ログイン</h1>
 						<form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-3'>
