@@ -6,7 +6,7 @@ import Image from 'next/image';
 const Header = () => {
     return (
         <div className='w-full bg-gray-50'>
-            <div className='flex justify-between items-center mx-auto px-4 h-16 sm:px-6 lg:px-8 max-w-screen-xl'>
+            <div className='flex justify-between items-center mx-auto h-16 p-6 xl:p-0 max-w-screen-xl'>
             <div className='flex gap-2'>
                 <Image src='/img/logo-header.svg' alt='ロゴ' width={32} height={32} />
                 <h1 className='text-3xl font-bold'>Diary App</h1>

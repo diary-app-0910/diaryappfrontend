@@ -1,6 +1,6 @@
 // ログインAPI
 export const login = async (email: string, password: string) => {
-    const response = await fetch('https:///api/auth/login', {
+    const response = await fetch('https://api/auth/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -16,7 +16,7 @@ export const login = async (email: string, password: string) => {
 
 // サインアップAPI
 export const signup = async (username:string, email: string, password: string) => {
-    const response = await fetch('https:///api/auth/signup', {
+    const response = await fetch('https://api/auth/signup', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -31,17 +31,19 @@ export const signup = async (username:string, email: string, password: string) =
 };
 
 // Create DiaryAPI
-export const createDiary = async (user_id:bigint, goodhighlight: string, reflection: string, opinion: string) => {
-    const response = await fetch('https:////api/diaries', {
+export const createDiary = async ( goodhighlight: string, reflection: string, opinion: string) => {
+// export const createDiary = async (user_id: bigint, goodhighlight: string, reflection: string, opinion: string) => {
+    const response = await fetch('https://api/diaries', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ user_id, goodhighlight, reflection, opinion }),
+        body: JSON.stringify({ goodhighlight, reflection, opinion }),
+        // body: JSON.stringify({ user_id, goodhighlight, reflection, opinion }),
     });
 
     if (!response.ok) {
-        throw new Error('日記登録に失敗しました');
+        throw new Error('登録に失敗しました');
     }
     return await response.json();
 };

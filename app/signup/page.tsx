@@ -18,6 +18,7 @@ interface SignupForm {
 
 // フォームのCSS
 const inputClass = () => 'block flex-1 border border-gray-400 rounded-md p-2';
+const pClass = () => 'text-red-500';
 
 const Page = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm<SignupForm>({ mode: 'onChange' });
@@ -45,21 +46,21 @@ const Page = () => {
 					<Image src='/img/logo-header.svg' alt='ロゴ' width={32} height={32} />
 					<h1 className='font-bold text-2xl lg:text-3xl'>Diary App</h1>
 				</div>
-                <div className='bg-white md:w-[400px] lg:w-[658px] h-[700px] flex flex-col items-center justify-center rounded-md p-6'>
+                <div className='bg-white md:w-[400px] lg:w-[658px] h-auto flex flex-col items-center justify-center rounded-md p-6'>
                     <div className='w-[318px]'>
                     <h1 className='text-left font-bold w-full mb-4 text-xl mb-8'>アカウント作成</h1>
                         <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-3'>
                             <label htmlFor='ユーザー名'>ユーザー名</label>
                             <input id='name' type='text' {...register('username', { required: '名前は必須です' })} className={inputClass()} />
-                            <p>{errors.username?.message}</p>
+                            <p className={pClass()}>{errors.username?.message}</p>
 
                             <label htmlFor='メールアドレス'>メールアドレス</label>
                             <input id='email' type='email' {...register('email', { required: 'メールアドレスは必須です' })} className={inputClass()} />
-                            <p>{errors.email?.message}</p>
+                            <p className={pClass()}>{errors.email?.message}</p>
 
                             <label htmlFor='パスワード'>パスワード</label>
                             <input id='password' type='password' {...register('password', { required: 'パスワードは必須です' })} className={inputClass()} />
-                            <p>{errors.password?.message}</p>
+                            <p className={pClass()}>{errors.password?.message}</p>
 
                             <label htmlFor='パスワード確認用'>パスワード確認用</label>
                             <input
@@ -71,7 +72,7 @@ const Page = () => {
                                 })}
                                 className={inputClass()}
                             />
-                            <p>{errors.passwordConfirmation?.message}</p>
+                            <p className={pClass()}>{errors.passwordConfirmation?.message}</p>
 
                             <Button buttonName='アカウント作成' />
                         </form>

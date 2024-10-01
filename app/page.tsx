@@ -16,7 +16,7 @@ interface LoginForm {
 
 // フォームのCSS
 const inputClass = () => 'block flex-1 border border-gray-400 rounded-md p-2';
-
+const pClass = () => 'text-red-500';
 
 export default function Home() {
 	const { register, handleSubmit, formState: { errors },} = useForm<LoginForm>({ mode: 'onChange'});
@@ -38,16 +38,16 @@ export default function Home() {
 					<Image src='/img/logo-header.svg' alt='ロゴ' width={32} height={32} />
 					<h1 className='font-bold text-2xl lg:text-3xl'>Diary App</h1>
 				</div>
-				<div className='bg-white md:w-[400px] lg:w-[658px] h-[520px] flex flex-col items-center justify-center rounded-md p-6'>
+				<div className='bg-white md:w-[400px] lg:w-[658px] h-auto flex flex-col items-center justify-center rounded-md p-8'>
 					<div className='w-[318px]'>
 						<h1 className='text-left font-bold w-full mb-4 text-xl mb-8'>ログイン</h1>
 						<form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-3'>
 							<label htmlFor='メールアドレス'>メールアドレス</label>
 							<input id='email' type='email' {...register('email', { required: 'メールアドレスは必須です' })} className={inputClass()} />
-							<p>{errors.email?.message}</p>
+							<p className={pClass()}>{errors.email?.message}</p>
 							<label htmlFor='パスワード'>パスワード</label>
 							<input id='password' type='password' {...register('password', { required: 'パスワードは必須です' })} className={inputClass()} />
-							<p>{errors.password?.message}</p>
+							<p className={pClass()}>{errors.password?.message}</p>
 							<Button buttonName='ログイン' />
 						</form>
 						<div className='flex justify-center'>
