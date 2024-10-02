@@ -23,8 +23,8 @@ const page = () => {
 
     return (
         <main className='flex justify-center'>
-            <div className='flex w-full h-auto gap-6 pt-6 max-w-screen-xl'>
-                <div className='flex flex-col gap-6 p-8 bg-white rounded-md w-[318px] h-[736px]'>
+            <div className='flex w-full h-auto gap-6 pt-6 p-6 xl:pt-6 xl:p-0 max-w-screen-xl'>
+                <div className='flex flex-col  bg-white rounded-md gap-6 p-8 w-[318px] h-[736px]'>
                     <h1 className='font-bold pb-2 text-2xl lg:text-3xl'>日記一覧</h1>
                     {months.map((month, index) => (
                         <h2 key={index}>{currentYear}年{month}</h2>
