@@ -36,7 +36,7 @@ const Page = () => {
 
 
     return (
-        <main className='flex items-center justify-center py-5'>
+        <main className='flex items-center justify-center py-6'>
             <div className='bg-white w-full h-auto flex flex-col items-center rounded-md p-6 gap-6 max-w-screen-xl'>
                 <div className='flex flex-col gap-8 pt-6 w-full md:w-full max-w-screen-lg h-auto'>
                     <h1 className='font-bold text-2xl lg:text-3xl'>日記入力</h1>

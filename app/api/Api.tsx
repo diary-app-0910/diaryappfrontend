@@ -48,9 +48,26 @@ export const createDiary = async ( goodhighlight: string, reflection: string, op
     return await response.json();
 };
 
-// Find by ID
-export const findById = async () => {
+// Find All Diaries
+export const findAllDiaries = async () => {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+    // const response = await fetch('https:///api/diaries', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+    if (!response.ok) {
+        throw new Error('データの取得に失敗しました');
+    }
+    const diaryData = await response.json(); // 全てのデータを取得
+    return diaryData;
+};
+
+// Find by ID
+export const findbyID = async (id: string) => {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    // const response = await fetch('https:////api/diaries/:id', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
